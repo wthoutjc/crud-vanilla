@@ -10,10 +10,13 @@ const defaultSETTINGS = {
   method: "GET",
 };
 
+//UPDATE
 const putSETTINGS = (hero) => {
   return {
     method: "PUT",
-    body: JSON.stringify(hero),
+    body: Array.isArray(hero)
+      ? JSON.stringify([...hero])
+      : JSON.stringify(hero),
     headers: {
       "Content-Type": "application/json",
     },

@@ -6,6 +6,13 @@ import { UXUI } from "./uxui.js";
 let heros;
 const $herosContainer = document.getElementById("heros-container");
 
+const normalizeString = (str) => {
+  return String(str)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(" ", "");
+};
+
 const requestHero = async (
   url = getAllURL,
   settings = defaultSETTINGS,
@@ -16,16 +23,18 @@ const requestHero = async (
   if (response.status !== 200)
     return ["Falló el procesamiento de la solicitud", false];
   const data = await response.json();
-  hero
-    ? (heros = Object.entries({ Batman: data }))
-    : (heros = Object.entries(data));
+
+  // Normalize Hero
+  if (hero) {
+    hero = normalizeString(hero);
+    let aux = eval(`({${hero}:null})`);
+    aux[hero] = data;
+    heros = Object.entries(aux);
+  } else heros = Object.entries(data);
+
   heros?.map((data) => {
     // Normalize text
-    const id = `card-${String(data[0])
-      .toLocaleLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(" ", "")}`;
+    const id = `card-${normalizeString(data[0])}`;
 
     // Inserting to DOM
     addCard({ data, id });
@@ -43,4 +52,4 @@ const requestIDHero = async (elementDOM, url, settings) => {
   }
 };
 
-export { requestHero, requestIDHero };
+export { requestHero, requestIDHero, normalizeString };

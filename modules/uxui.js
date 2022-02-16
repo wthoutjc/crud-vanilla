@@ -57,10 +57,10 @@ const UXUI = (request) => {
          * $inputs[1] edad
          * $inputs[3] BUTTON
          */
-        $title.innerHTML = `${request[0][0]}`;
-        $inputs[1].value = request[0][1].nombre;
-        $inputs[3].value = request[0][1].edad;
-        $inputs[5].value = request[0][1].image;
+        $title.innerHTML = `${request[i][0]}`;
+        $inputs[1].value = request[i][1].nombre;
+        $inputs[3].value = request[i][1].edad;
+        $inputs[5].value = request[i][1].image;
       };
 
       $card.children[4].children[1].onclick = (e) => {
