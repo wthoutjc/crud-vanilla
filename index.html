@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/d70f14a51a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles.css">
-    <title>CRUD</title>
+    <title>HERO CRUD</title>
 </head>
 
 <body>
     <header>
         <div class="title">
-            <h3>GiWeb HEROE CRUD</h3>
+            <h3>GiWeb HERO CRUD</h3>
         </div>
         <div class="github">
             <img src="./images/github-icon.svg" alt="GitHub">
@@ -22,70 +22,81 @@
     </header>
     <main>
         <section class="search">
-            <input type="text" name="heroe" id="heroe" placeholder="Search an heroe...">
-            <button>
+            <input type="text" name="hero" id="hero" placeholder="Search an hero...">
+            <button id="search-hero">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
             <button id="add-button">
                 <i class="fa-solid fa-plus"></i>
             </button>
         </section>
-        <section class="heroes-container" id="heroes-container">
+        <section class="heros-container" id="heros-container">
             <!-- EJEMPLO CARD -->
-            <div class="card" id="card">
-                <img src="https://res.cloudinary.com/ddmeptk5c/image/upload/v1644941283/17236-spiderman_xgwgwz.jpg" alt="">
+            <!-- <div class="card" id="card">
+                <img src="https://res.cloudinary.com/ddmeptk5c/image/upload/v1644941283/17236-spiderman_xgwgwz.jpg"
+                    alt="">
                 <div class="effect1" id="effect1"></div>
                 <div class="effect2" id="effect2">
                     <p>SPIDERMAN</p>
+                    <p>Peter Parker</p>
                     <p>NAME</p>
                     <p>AGE</p>
                 </div>
                 <button class="info-button" id="info-button"><i class="fa-solid fa-angle-down"></i></button>
-                <div class="card-info" id="card-info">
-                    <button id="edit-heroe"><i class="fa-solid fa-pen-to-square"></i></button>
-                    <button id="delete-heroe"><i class="fa-solid fa-delete-left"></i></button>
+                <div class="card-info" id="info">
+                    <button id="edit-hero"><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button id="delete-hero"><i class="fa-solid fa-delete-left"></i></button>
                 </div>
-            </div>
+            </div> -->
         </section>
     </main>
-    <div class="add-heroe-form" id="add-heroe-form">
-        <form action="" id="heroe-form">
+    <div class="add-hero-form" id="add-hero-form">
+        <form action="" id="hero-form">
             <div class="form-title">
-                <h1>Add a new Heroe</h1>
+                <h1>Add a new hero</h1>
                 <button type="button" id="close-button"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <div class="input-data">
-                <input type="text" placeholder="Type heroe's name...">
+                <span>Hero's name</span>
+                <input type="text" placeholder="Type hero's name...">
+                <span>Person's name</span>
                 <input type="text" placeholder="Type the person's name...">
+                <span>Age</span>
                 <input type="text" placeholder="Type the age...">
-                <button type="button">ADD <i class="fa-solid fa-arrow-up-from-bracket"></i></button>
+                <span>Link image</span>
+                <input type="text" placeholder="Link image...">
+                <button>ADD <i class="fa-solid fa-arrow-up-from-bracket"></i></button>
             </div>
         </form>
     </div>
-    <div class="edit-heroe-form" id="edit-heroe-form">
-        <form action="" id="heroe-form">
+    <div class="edit-hero-form" id="edit-hero-form">
+        <form action="" id="hero-form">
             <div class="form-title">
-                <h1>Edit a new Heroe</h1>
-                <button id="close-button"><i class="fa-solid fa-xmark"></i></button>
+                <h1 id="hero-id">Edit a new hero</h1>
+                <button type="button" id="close-button2"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <div class="input-data">
-                <input type="text" placeholder="Type heroe's name...">
-                <input type="text" placeholder="Type the person's name...">
-                <input type="text" placeholder="Type the age...">
-                <button type="button">UPDATE<i class="fa-solid fa-arrow-up-from-bracket"></i></button>
+                <span>Person's name</span>
+                <input type="text" name="name-hero" id="name-hero" placeholder="Type the person's name...">
+                <span>Age</span>
+                <input type="text" name="age-hero" id="age-hero" placeholder="Type the age...">
+                <span>Link image</span>
+                <input type="text" name="image-hero" id="image-hero" placeholder="Link image...">
+                <button id="edit-hero"><i class="fa-solid fa-arrow-up-from-bracket"></i></button>
             </div>
         </form>
     </div>
-    <div class="delete-heroe-form" id="delete-heroe-form">
-        <form action="" id="heroe-form">
+    <div class="delete-hero-form" id="delete-hero-form">
+        <form action="" id="hero-form">
             <div class="form-title">
-                <h1>Delete a new Heroe</h1>
-                <button id="close-button"><i class="fa-solid fa-xmark"></i></button>
+                <h1 id="delete-id">Delete a new hero</h1>
+                <button type="button" id="close-button3"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <div class="are-sure">
                 <h1>¿Are you sure?</h1>
             </div>
-            <button class="delete-button" id="delete-button">DELETE <i class="fa-solid fa-trash-can"></i></button>
+            <button type="button" class="delete-button" id="delete-button">DELETE <i
+                    class="fa-solid fa-trash-can"></i></button>
         </form>
     </div>
     <footer>
